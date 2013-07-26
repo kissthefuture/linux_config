@@ -13,9 +13,6 @@
 #alias name='/path/to/script.pl arg1'
 #unalias aliasname
 
-
-#extend old
-
 alias vim="mvim -v"
 
 alias vi="vim"
@@ -24,20 +21,20 @@ alias grep="grep -rnE --color"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias mkdir="mkdir -pv"
-alias cp='cp -v'
-alias cpr='cp -r'
-alias mv='mv -v'
+alias cp='cp -iv'
+alias cpr='cp -ir'
+alias mv='mv -iv'
 alias chmod='chmod -v --preserve-root'
 alias chown='chown -v --preserve-root'
 alias chgrp='chgrp -v --preserve-root'
 alias df="df -h"
-alias du="du -h"
+alias du="du -hs"
 alias last="last -a"
 alias free='free -m'
 alias lftp="lftp user:pwd@ftpip"
 #Notice: install colordiff
 alias diff='colordiff'
-#alias ln='ln -s'
+#alias lns='ln -s'
 alias bc='bc -l'
 alias chrome='chromium-browser'
 alias py='python'
@@ -71,8 +68,9 @@ alias ms='mysql -uroot -p123456'    #mysql
 alias sv="sudo vim"      #用sudo编辑文件时
 alias vd='vimdiff'  #vim diff两个文件
 alias tf='tail -f'  #动态查看文件变化
-alias t100='tail -n 100'
-alias af="awk -F '\t' '{print NF}'"   #查看文件列数，用\t分隔，最常用，其实也可以搞个通用的，接收参数
+
+alias ha='head -1'
+alias nf="awk -F '\t' '{print NF}'"   #查看文件列数，用\t分隔，最常用，其实也可以搞个通用的，接收参数
 alias wl='wc -l'    #统计行数
 alias hpwd='echo -n "`hostname`:";eval pwd'  #用scp时，展示hostname和pwd
 
@@ -82,19 +80,24 @@ alias dus="du -s"   #磁盘
 alias du0="du --max-depth=0"
 alias du1="du --max-depth=1"
 
-#alias ll='ls -al --color=tty'   #ls相关，这里--color需要根据终端设
-#alias lx='ls -lhBX --color=auto'        #sort by extension
-#alias lz='ls -lhrS --color=auto'        #sort by size
-#alias lt='ls -lhrt --color=auto'        #sort by date    最常用到，ls -rt，按修改时间查看目录下文件
+alias top='top -c -M'
+alias tm='top -u $USER'
+alias len='less -S -N'
+alias les='less -S'
+alias le='les'
 
-#for mac
-alias ll='ls -al'   #ls相关，这里--color需要根据终端设
-alias lx='ls -lhBX'        #sort by extension
-alias lz='ls -lhrS'        #sort by size
-alias lt='ls -lhrt'        #sort by date    最常用到，ls -rt，按修改时间查看目录下文件
+alias ls='ls --color=auto'
+alias ll='ls -alhF --color'
+alias l='ll'
+alias la='l -a'
 
 alias lsd='find . -maxdepth 1 -type d | sort'   #列出所有目录
 alias sl='ls'
+alias javadoc='javadoc -verbose'
+alias clean_disk='find . -size +10M -exec ls -lh {} \;'
+alias valgrind='valgrind  --leak-check=full --leak-resolution=high --show-reachable=yes -v --trace-children=yes'
+alias ta='tail -1'
+alias rm='rm -i'
 
 export OS=`uname`
 if [ $OS = "Linux" ]; then
@@ -103,7 +106,7 @@ else
     alias ls='ls -GF'
 fi
 
-alias pong='ping -c 5 '   #ping，限制
+alias ping='ping -c 5 '   #ping，限制
 alias ports='netstat -tulanp'
 alias dfind='find -type d -name'  #查找文件夹
 alias ffind='find -type f -name'  #查找文件
@@ -117,22 +120,6 @@ alias cpuinfo='lscpu'
 
 alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \; >> /dev/null 2>&1'  #递归删除目录下所有pyc
 alias now='date +"%Y-%m-%d %T"'
-
-#svn operation
-alias rmsvn='find . -name ".svn" -exec rm -rf {} \; >> /dev/null 2>&1'  #递归删除目录下所有.svn
-alias svnci='svn ci -m "commit by $USER" '   #便捷操作，适用一些不重要文件的，不建议适用哈
-alias svnst='svn st'    #少一个空格，少一个是一个......囧
-
-#for go
-alias gor='go run'
-alias gob='go build'
-
-#for nginx
-alias nginx='/etc/init.d/nginx'
-
-#for redis
-alias redis='/etc/init.d/redis_6379'
-alias rediscli='redis-cli'
 
 #for tmux
 alias tm='tmux -2'
