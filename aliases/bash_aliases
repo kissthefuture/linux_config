@@ -6,11 +6,6 @@
 ############
 #  format  #
 ############
-#alias name=value
-#alias name='command'
-#alias name='command arg1 arg2'
-#alias name='/path/to/script'
-#alias name='/path/to/script.pl arg1'
 #unalias aliasname
 
 alias vim="mvim -v"
@@ -31,10 +26,11 @@ alias df="df -h"
 alias du="du -hs"
 alias last="last -a"
 alias free='free -m'
-alias lftp="lftp user:pwd@ftpip"
+
+
 #Notice: install colordiff
 alias diff='colordiff'
-#alias lns='ln -s'
+alias lns='ln -s'
 alias bc='bc -l'
 alias chrome='chromium-browser'
 alias py='python'
@@ -56,9 +52,8 @@ alias cdb='cd "`cat ~/.cdsave`"'  # cd back
 
 
 #short cut
-alias s='sudo'   #sudo时
 alias apt-get='sudo apt-get'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 
 alias gu='iconv -f gbk -t utf-8'  #两种类型编码转换
 alias ug='iconv -f utf-8 -t gbk'
@@ -74,7 +69,6 @@ alias nf="awk -F '\t' '{print NF}'"   #查看文件列数，用\t分隔，最常
 alias wl='wc -l'    #统计行数
 alias hpwd='echo -n "`hostname`:";eval pwd'  #用scp时，展示hostname和pwd
 
-alias c="clear"   #清屏
 alias cls="clear"   #清屏
 alias dus="du -s"   #磁盘
 alias du0="du --max-depth=0"
@@ -92,7 +86,6 @@ alias l='ll'
 alias la='l -a'
 
 alias lsd='find . -maxdepth 1 -type d | sort'   #列出所有目录
-alias sl='ls'
 alias javadoc='javadoc -verbose'
 alias clean_disk='find . -size +10M -exec ls -lh {} \;'
 alias valgrind='valgrind  --leak-check=full --leak-resolution=high --show-reachable=yes -v --trace-children=yes'
