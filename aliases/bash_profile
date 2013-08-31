@@ -41,11 +41,6 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
 export CLASSPATH=$HADOOP_HOME/lib:$JAVA_HOME/lib:$JRE_HOME/lib
 
 export PATH=$PATH:$HADOOP_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HIVE_HOME
-export PYTHONPATH=$PYTHONPATH:/home/ken/project/qvod/
-export PYTHONPATH=$PYTHONPATH:/Users/ken/workspace/wklken/1/
-export PYTHONPATH=$PYTHONPATH:/Users/ken/workspace/wklken/1/mdpress
-
-export GOPATH=/Users/ken/workspace/goweb
 
 #设置了Ls的目录颜色
 export HOSTSHORT=`hostname`
